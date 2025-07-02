@@ -47,7 +47,7 @@ function EducationInfoForm({ educationInfo, setEducationInfo, onChange }) {
                     name='schoolName'
                     value={educationInfo.schoolName}
                     onChange={onChange}
-                    disabled={isSubmitted === true ? true : false}  
+                    disabled={isSubmitted}  
                     />
                 </label>
                 <br />

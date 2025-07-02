@@ -1,14 +1,7 @@
 import { useState } from 'react';
 
-function ProfessionalInfoForm() {
-    const [professionalInfo, setProfessionalInfo] = useState({companyName: '', positionTitle: '', mainResponsibilities: '', employedDateStart: '', employedDateEnd: ''});
+function ProfessionalInfoForm({ professionalInfo, setProfessionalInfo, onChange}) {
     const [isSubmitted, setIsSubmitted] = useState(false);
-
-    function onChange(e){
-        const name = e.target.name;
-        const value = e.target.value;
-        setProfessionalInfo({...professionalInfo, [name]:value});
-    }
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -55,7 +48,7 @@ function ProfessionalInfoForm() {
                     name='companyName'
                     value={professionalInfo.companyName}
                     onChange={onChange}
-                    disabled={isSubmitted === true ? true : false}  
+                    disabled={isSubmitted}  
                     />
                 </label>
                 <br />
