@@ -1,14 +1,7 @@
 import { useState } from 'react';
 
-function EducationInfoForm() {
-    const [educationInfo, setEducationInfo] = useState({schoolName: '', studyTitle: '', studyDate: ''});
+function EducationInfoForm({ educationInfo, setEducationInfo, onChange }) {
     const [isSubmitted, setIsSubmitted] = useState(false);
-
-    function onChange(e){
-        const name = e.target.name;
-        const value = e.target.value;
-        setEducationInfo({...educationInfo, [name]:value});
-    }
 
     function handleSubmit(e) {
         e.preventDefault();
