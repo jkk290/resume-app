@@ -1,21 +1,14 @@
 import { useState } from 'react';
 
-function GeneralInfoForm() {
-    const [generalInfo, setGeneralInfo] = useState({firstName: '', lastName: '', email: '', phoneNum: ''});
-    const [isSubmitted, setIsSubmitted] = useState(false);
-
-    function onChange(e){
-        const name = e.target.name;
-        const value = e.target.value;
-        setGeneralInfo({...generalInfo, [name]:value});
-    }
+function GeneralInfoForm({ generalInfo, onChange, setGeneralInfo }) {
+    const [isSubmitted, setIsSubmitted] = useState(false);    
 
     function handleSubmit(e) {
         e.preventDefault();
         setIsSubmitted(true);
     }
 
-    function clearState(e) {
+    function clearState() {
         setGeneralInfo({firstName: '', lastName: '', email: '', phoneNum: ''});
         setIsSubmitted(false);
     }
@@ -54,7 +47,7 @@ function GeneralInfoForm() {
                     name='firstName'
                     value={generalInfo.firstName}
                     onChange={onChange}
-                    disabled={isSubmitted === true ? true : false}  
+                    disabled={isSubmitted}  
                     />
                 </label>
                 <br />
