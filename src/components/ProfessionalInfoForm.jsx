@@ -1,7 +1,11 @@
-import { useState } from 'react';
-
-function ProfessionalInfoForm({ professionalInfo, setProfessionalInfo, onChange}) {
-    const [isSubmitted, setIsSubmitted] = useState(false);
+function ProfessionalInfoForm({ 
+    professionalInfo, 
+    setProfessionalInfo, 
+    onChange,
+    isSubmitted,
+    setIsSubmitted
+}) {
+    
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -25,18 +29,18 @@ function ProfessionalInfoForm({ professionalInfo, setProfessionalInfo, onChange}
         }
     }
 
-    function ShowInfo() {
-        if (isSubmitted) {
-            return (
-                <>
-                    <h1>{professionalInfo.companyName}</h1>
-                    <p>{professionalInfo.positionTitle}</p>
-                    <p>{professionalInfo.mainResponsibilities}</p>
-                    <p>{professionalInfo.employedDateStart + ' - ' + professionalInfo.employedDateEnd}</p>
-                </>
-            )
-        }
-    }
+    // function ShowInfo() {
+    //     if (isSubmitted) {
+    //         return (
+    //             <>
+    //                 <h1>{professionalInfo.companyName}</h1>
+    //                 <p>{professionalInfo.positionTitle}</p>
+    //                 <p>{professionalInfo.mainResponsibilities}</p>
+    //                 <p>{professionalInfo.employedDateStart + ' - ' + professionalInfo.employedDateEnd}</p>
+    //             </>
+    //         )
+    //     }
+    // }
 
     return (
         <>
@@ -99,7 +103,7 @@ function ProfessionalInfoForm({ professionalInfo, setProfessionalInfo, onChange}
                 <button onClick={clearState} type='reset'>Clear</button>
                 <EditButton />
             </form>
-            <ShowInfo />
+            {/* <ShowInfo /> */}
         </>
     )
 

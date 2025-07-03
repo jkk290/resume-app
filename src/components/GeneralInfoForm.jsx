@@ -1,7 +1,10 @@
-import { useState } from 'react';
-
-function GeneralInfoForm({ generalInfo, onChange, setGeneralInfo }) {
-    const [isSubmitted, setIsSubmitted] = useState(false);    
+function GeneralInfoForm({ 
+    generalInfo, 
+    onChange, 
+    setGeneralInfo,
+    isSubmitted,
+    setIsSubmitted 
+}) {  
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -25,17 +28,17 @@ function GeneralInfoForm({ generalInfo, onChange, setGeneralInfo }) {
         }
     }
 
-    function ShowInfo() {
-        if (isSubmitted) {
-            return (
-                <>
-                    <h1>{generalInfo.firstName + ' ' + generalInfo.lastName}</h1>
-                    <p>{generalInfo.email}</p>
-                    <p>{generalInfo.phoneNum}</p>
-                </>
-            )
-        }
-    }
+    // function ShowInfo() {
+    //     if (isSubmitted) {
+    //         return (
+    //             <>
+    //                 <h1>{generalInfo.firstName + ' ' + generalInfo.lastName}</h1>
+    //                 <p>{generalInfo.email}</p>
+    //                 <p>{generalInfo.phoneNum}</p>
+    //             </>
+    //         )
+    //     }
+    // }
 
     return (
         <>
@@ -88,7 +91,7 @@ function GeneralInfoForm({ generalInfo, onChange, setGeneralInfo }) {
                 <button onClick={clearState} type='reset'>Clear</button>
                 <EditButton />
             </form>
-            <ShowInfo />
+            {/* <ShowInfo /> */}
         </>
     )
 

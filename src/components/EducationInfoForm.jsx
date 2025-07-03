@@ -1,7 +1,10 @@
-import { useState } from 'react';
-
-function EducationInfoForm({ educationInfo, setEducationInfo, onChange }) {
-    const [isSubmitted, setIsSubmitted] = useState(false);
+function EducationInfoForm({ 
+    educationInfo, 
+    setEducationInfo, 
+    onChange, 
+    isSubmitted, 
+    setIsSubmitted
+}) {
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -25,17 +28,17 @@ function EducationInfoForm({ educationInfo, setEducationInfo, onChange }) {
         }
     }
 
-    function ShowInfo() {
-        if (isSubmitted) {
-            return (
-                <>
-                    <h1>{educationInfo.schoolName}</h1>
-                    <p>{educationInfo.studyTitle}</p>
-                    <p>{educationInfo.studyDate}</p>
-                </>
-            )
-        }
-    }
+    // function ShowInfo() {
+    //     if (isSubmitted) {
+    //         return (
+    //             <>
+    //                 <h1>{educationInfo.schoolName}</h1>
+    //                 <p>{educationInfo.studyTitle}</p>
+    //                 <p>{educationInfo.studyDate}</p>
+    //             </>
+    //         )
+    //     }
+    // }
 
     return (
         <>
@@ -77,7 +80,7 @@ function EducationInfoForm({ educationInfo, setEducationInfo, onChange }) {
                 <button onClick={clearState} type='reset'>Clear</button>
                 <EditButton />
             </form>
-            <ShowInfo />
+            {/* <ShowInfo /> */}
         </>
     )
 
